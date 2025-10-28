@@ -16,6 +16,7 @@
         color: #333;
         background-color: #f8f8f8;
       }
+
       header {
         position: fixed;
         top: 0;
@@ -23,18 +24,24 @@
         width: 100%;
         background: white;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 15px 40px;
+        padding: 15px 25px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         z-index: 10;
       }
       section {
-        scroll-margin-top: 100px; /* hauteur du header */
+        scroll-margin-top: 100px;
       }
 
       header img {
-        height: 80px;
+        height: 70px;
+      }
+
+      /* NAVIGATION */
+      nav {
+        display: flex;
+        align-items: center;
       }
       nav a {
         margin-left: 20px;
@@ -45,10 +52,45 @@
       nav a:hover {
         color: #facc15;
       }
+
+      /* MENU BURGER */
+      .burger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .burger span {
+        height: 3px;
+        width: 25px;
+        background: #333;
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+      .mobile-nav {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 90px;
+        right: 25px;
+        width: 180px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+      }
+      .mobile-nav a {
+        padding: 12px 15px;
+        border-bottom: 1px solid #eee;
+      }
+      .mobile-nav a:last-child {
+        border-bottom: none;
+      }
+
       main {
         margin-top: 100px;
       }
-      /* Hero */
+
+      /* HERO */
       .hero {
         text-align: center;
         padding: 120px 20px;
@@ -71,7 +113,8 @@
         border-radius: 6px;
         font-weight: bold;
       }
-      /* À propos */
+
+      /* À PROPOS */
       .apropos {
         padding: 80px 20px;
         text-align: center;
@@ -86,7 +129,8 @@
         margin: 0 auto;
         font-size: 1.1rem;
       }
-      /* Prestations */
+
+      /* PRESTATIONS */
       .prestations {
         padding: 80px 20px;
         text-align: center;
@@ -117,7 +161,8 @@
         margin-bottom: 10px;
         color: #0531aa;
       }
-      /* Galerie */
+
+      /* GALERIE */
       .galerie {
         padding: 80px 20px;
         background: #f1f1f1;
@@ -139,7 +184,8 @@
         border-radius: 10px;
         object-fit: cover;
       }
-      /* Contact */
+
+      /* CONTACT */
       .contact {
         padding: 80px 20px;
         background: #ffffff;
@@ -170,34 +216,77 @@
         font-weight: bold;
         cursor: pointer;
       }
+
+      /* BOUTON APPEL MOBILE */
+      .call-button {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #facc15;
+        color: #111;
+        padding: 15px 20px;
+        border-radius: 50px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        z-index: 20;
+      }
+
       footer {
         text-align: center;
         padding: 20px;
         background: #111827;
         color: white;
       }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        nav {
+          display: none;
+        }
+        .burger {
+          display: flex;
+        }
+        .call-button {
+          display: block;
+        }
+      }
     </style>
   </head>
+
   <body>
     <header>
       <img src="images/dimeg-logo.png" alt="Logo DIMEG Énergie" />
+
       <nav>
         <a href="#apropos">À propos</a>
         <a href="#prestations">Prestations</a>
         <a href="#galerie">Galerie</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <div class="burger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="mobile-nav" id="mobileMenu">
+        <a href="#apropos" onclick="toggleMenu()">À propos</a>
+        <a href="#prestations" onclick="toggleMenu()">Prestations</a>
+        <a href="#galerie" onclick="toggleMenu()">Galerie</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+      </div>
     </header>
 
     <main>
-      <!-- Hero -->
       <section class="hero">
         <h1>DIMEG Énergie</h1>
         <p>Électricien à Istres – Dépannage, installation et rénovation</p>
         <a href="#contact">Demander un devis</a>
       </section>
 
-      <!-- À propos -->
       <section class="apropos" id="apropos">
         <h2>À propos de DIMEG Énergie</h2>
         <p>
@@ -208,7 +297,6 @@
         </p>
       </section>
 
-      <!-- Prestations -->
       <section class="prestations" id="prestations">
         <h2>Nos prestations</h2>
         <div class="cards">
@@ -236,7 +324,6 @@
         </div>
       </section>
 
-      <!-- Galerie -->
       <section class="galerie" id="galerie">
         <h2>Quelques réalisations</h2>
         <div class="photos">
@@ -255,7 +342,6 @@
         </div>
       </section>
 
-      <!-- Contact -->
       <section class="contact" id="contact">
         <h2>Contactez-nous</h2>
         <form>
@@ -268,5 +354,15 @@
     </main>
 
     <footer>© 2025 DIMEG Énergie – Électricien à Istres</footer>
+
+    <!-- Bouton appel mobile -->
+    <a href="tel:0660395451" class="call-button">📞 Appeler</a>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+      }
+    </script>
   </body>
 </html>
