@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="dimeg-logo.png" />
+    <title>DIMEG Énergie - Électricien à Istres</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        color: #333;
+        background-color: #f8f8f8;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+      }
+      section {
+        scroll-margin-top: 100px; /* hauteur du header */
+      }
+
+      header img {
+        height: 80px;
+      }
+      nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+      }
+      nav a:hover {
+        color: #facc15;
+      }
+      main {
+        margin-top: 100px;
+      }
+      /* Hero */
+      .hero {
+        text-align: center;
+        padding: 120px 20px;
+        background: linear-gradient(to right, #1f2937, #111827);
+        color: white;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+      .hero a {
+        background: #facc15;
+        color: #111;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+      }
+      /* À propos */
+      .apropos {
+        padding: 80px 20px;
+        text-align: center;
+        background: #ffffff;
+      }
+      .apropos h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .apropos p {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+      /* Prestations */
+      .prestations {
+        padding: 80px 20px;
+        text-align: center;
+        background: #f8f8f8;
+      }
+      .prestations h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card h3 {
+        margin-bottom: 10px;
+        color: #0531aa;
+      }
+      /* Galerie */
+      .galerie {
+        padding: 80px 20px;
+        background: #f1f1f1;
+        text-align: center;
+      }
+      .galerie h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+      .photos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .photos img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      /* Contact */
+      .contact {
+        padding: 80px 20px;
+        background: #ffffff;
+        text-align: center;
+      }
+      .contact h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      input,
+      textarea {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+      button {
+        background: #facc15;
+        border: none;
+        padding: 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #111827;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="dimeg-logo.png" alt="Logo DIMEG Énergie" />
+      <nav>
+        <a href="#apropos">À propos</a>
+        <a href="#prestations">Prestations</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <h1>DIMEG Énergie</h1>
+        <p>Électricien à Istres – Dépannage, installation et rénovation</p>
+        <a href="#contact">Demander un devis</a>
+      </section>
+
+      <!-- À propos -->
+      <section class="apropos" id="apropos">
+        <h2>À propos de DIMEG Énergie</h2>
+        <p>
+          Entreprise familiale spécialisée dans le dépannage et l’installation
+          électrique à Istres depuis plus de 10 ans. Nous intervenons rapidement
+          pour tous vos besoins en électricité, en garantissant sécurité et
+          qualité.
+        </p>
+      </section>
+
+      <!-- Prestations -->
+      <section class="prestations" id="prestations">
+        <h2>Nos prestations</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>⚡ Dépannage électrique</h3>
+            <p>
+              Intervention rapide pour pannes, disjoncteurs, prises ou
+              éclairages défectueux.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🏠 Installation & rénovation</h3>
+            <p>
+              Mise aux normes, création de circuits, tableau électrique,
+              éclairage intérieur.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🔌 Solutions connectées</h3>
+            <p>
+              Installation de domotique, bornes de recharge, et optimisation
+              énergétique.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galerie -->
+      <section class="galerie" id="galerie">
+        <h2>Quelques réalisations</h2>
+        <div class="photos">
+          <img
+            src="premium_photo-1661911309991-cc81afcce97d.jfif"
+            alt="Installation électrique intérieure"
+          />
+          <img
+            src="photo-1621905251189-08b45d6a269e.jfif"
+            alt="Tableau électrique rénovation"
+          />
+          <img
+            src="pngtree-electrician-working-on-the-electricity-pole-volts-maintenance-construction-photo-picture-image_7895072.jpg"
+            alt="Maintenance électrique sur site extérieur"
+          />
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact" id="contact">
+        <h2>Contactez-nous</h2>
+        <form>
+          <input type="text" placeholder="Nom" required />
+          <input type="email" placeholder="Email" required />
+          <textarea rows="4" placeholder="Votre message..." required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>© 2025 DIMEG Énergie – Électricien à Istres</footer>
+  </body>
+</html>
